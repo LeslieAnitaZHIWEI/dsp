@@ -1,0 +1,60 @@
+import { queryCurrent, query as queryUsers } from '@/services/user';
+const UserModel = {
+  namespace: 'user',
+  state: {
+    currentUser: {
+      sysUser:{}
+    },
+  },
+  effects: {
+    *fetch(_, { call, put }) {
+      const response = yield call(queryUsers);
+      yield put({
+        type: 'save',
+        payload: response,
+      });
+    },
+
+    *fetchCurrent(_, { call, put }) {
+      const response = yield call(queryCurrent);
+      yield put({
+        type: 'saveCurrentUser',
+        payload: response.data,
+      });
+    },
+  },
+  reducers: {
+    saveCurrentUser(state, action) {
+      return { ...state, currentUser: action.payload || {
+      sysUser:{}
+
+      } };
+    },
+
+    changeNotifyCount(
+      state = {
+        currentUser: {},
+      },
+      action,
+    ) {
+      return {
+        ...state,
+        currentUser: {
+          ...state.currentUser,
+          notifyCount: action.payload.totalCount,
+          unreadCount: action.payload.unreadCount,
+        },
+      };
+    },
+    clearUser(state,action){
+      return {
+        ...state,
+        currentUser: {
+          sysUser:{}
+
+        },
+      };
+    }
+  },
+};
+export default UserModel;

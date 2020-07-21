@@ -1,0 +1,88 @@
+.form {
+  float: right;
+  padding: 15px;
+  min-height: 30px;
+}
+.rightFive {
+  margin-right: 5px;
+}
+.makeCenter{
+  text-align: center;
+  position: relative;
+
+}
+:global{
+  .greenButton{
+    background-color:rgb(26, 188, 156);
+    border-color:rgb(26, 188, 256);
+    color:white
+  }
+  .editable-row:hover .editable-cell-value-wrap {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 4px 11px;
+  }
+  .editable-cell-value-wrap {
+    padding: 5px 12px;
+    cursor: pointer;
+  }
+  .oriModal{
+    .ant-modal-title{
+      text-align: center;
+    }
+    :global {
+      .ant-form-item-control-input{
+      min-height: 40px;
+    }
+    }
+  }
+}
+:global {
+  .ant-picker-input > input:placeholder-shown{
+    text-align: center;
+  }
+  .ant-switch-inner{
+    margin:0 6px 0 24px!important
+  }
+  .ant-switch-checked .ant-switch-inner{
+    margin-right: 24px!important;
+    margin-left: 6px!important
+  }
+  .site-tree-search-value {
+    color: #f50;
+  }
+  .ant-modal-title{
+    font-weight: 700;
+  }
+
+  .editable-cell-value-wrap{
+    cursor: pointer;
+  }
+  .ant-table.ant-table-bordered {
+    .ant-table-container {
+      border: 1px solid rgba(167, 182, 196, 1);
+      border-right: 0;
+      border-bottom: 0;
+    }
+    thead > tr > th {
+      border-right: 1px solid rgba(167, 182, 196, 1);
+    }
+  }
+  .ant-table tbody > tr > td{
+    border-right: 1px solid rgba(167, 182, 196, 1)!important;
+    border-bottom: 1px solid rgba(167, 182, 196, 1)!important
+  }
+  .ant-table thead > tr > th{
+    border-bottom: 1px solid rgba(167, 182, 196, 1)!important
+
+  }
+}
+.cardCenter{
+  margin:0 auto!important;
+  :global{
+      .ant-form-item{
+          margin-bottom: 5px;
+      }
+  }
+}
+
